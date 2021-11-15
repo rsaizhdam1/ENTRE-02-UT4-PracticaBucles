@@ -31,7 +31,40 @@ public class PracticaBucles {
      *   Utiliza solo bucles while
      */
     public void generarNumeros(int n)   {
-       //TODO
+        System.out.println("Nº máximo de aleatorios a generar: " + n);
+        System.out.println("o hasta que salga el 0");
+        int i = 0;
+        int al = 1;
+        int fila = 0;
+        int total = 0;
+        int pares = 0;
+        int impares = 0;
+        String resul = "";
+        while (i != n && al != 0){
+            if (fila < 5){
+                al = generador.nextInt(50000 - (-1000)) - 1000;
+                total += al;
+                if (al % 2 == 0 && al > pares) {
+                    pares = al;
+                }
+                else if (al % 2 != 0){
+                    impares += al;
+                }
+                i++;
+                resul += String.format("%12d:%5d", al, obtenerNumeroSinCeros(al));
+                fila++;
+            }
+            else {
+                resul += "\n";
+                fila = 0;
+            }
+        }
+        System.out.println(resul);
+        System.out.printf("\n\n%25s%10.2f\n%25s%10d\n%25s%10d", 
+                            "Media:", (double)(total / i), 
+                            "Suma impares:", impares,
+                            "Máximo pares:", pares);    
+       
 
     }
 
@@ -40,10 +73,7 @@ public class PracticaBucles {
      *  Hazlo sin utilizar if
      */
     public boolean esImpar(int numero)   {
-        //TODO
-        
-        
-        return  false;
+        return  numero % 2 != 0;
     }
 
     /**
@@ -56,10 +86,16 @@ public class PracticaBucles {
      *   
      */
     public int obtenerNumeroSinCeros(int numero)   {
-        //TODO
-        
-        
-        return 0;
+        int resul = 0;
+        int i = 1;
+        while (numero != 0) {
+            if (numero % 10 != 0) {
+                resul += (numero % 10) * i;
+                i *= 10;
+            }
+            numero /= 10;
+        }
+        return resul;
     }
 
     /**
@@ -81,8 +117,8 @@ public class PracticaBucles {
      *   
      */
     public void escribirLetraN(int altura)    {
-       //TODO
-
+        //TODO
+        
     }
 
     /**
@@ -90,8 +126,8 @@ public class PracticaBucles {
      *  con bucles for
      */
     private void escribirCaracter(char caracter, int n)    {
-       //TODO
-       
+        //TODO
+        
        
        
        
