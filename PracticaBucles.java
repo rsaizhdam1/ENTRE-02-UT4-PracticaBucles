@@ -120,7 +120,7 @@ public class PracticaBucles {
         System.out.println("Letra N - Altura: " + altura);
         int esp1 = 0;
         int esp2 = altura - 1;
-        for (int alt = 0; alt != altura; alt++){
+        for (int alt = 0; alt <= altura; alt++){
             System.out.print(CARACTER);
             escribirCaracter(ESPACIO, esp1);
             esp1++;
@@ -137,7 +137,7 @@ public class PracticaBucles {
      *  con bucles for
      */
     private void escribirCaracter(char caracter, int n)    {
-        for (int i = 0; i != n; i++) {
+        for (int i = 0; i <= n; i++) {
             System.out.print(caracter);                
         }
     }
