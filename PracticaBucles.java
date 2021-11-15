@@ -117,8 +117,19 @@ public class PracticaBucles {
      *   
      */
     public void escribirLetraN(int altura)    {
-        //TODO
-        
+        System.out.println("Letra N - Altura: " + altura);
+        int esp1 = 0;
+        int esp2 = altura - 1;
+        for (int alt = 0; alt != altura; alt++){
+            System.out.print(CARACTER);
+            escribirCaracter(ESPACIO, esp1);
+            esp1++;
+            System.out.print(CARACTER);    
+            escribirCaracter(ESPACIO, esp2);  
+            esp2--;
+            System.out.print(CARACTER);
+            System.out.println();
+        }
     }
 
     /**
@@ -126,11 +137,9 @@ public class PracticaBucles {
      *  con bucles for
      */
     private void escribirCaracter(char caracter, int n)    {
-        //TODO
-        
-       
-       
-       
+        for (int i = 0; i != n; i++) {
+            System.out.print(caracter);                
+        }
     }
 
 }
